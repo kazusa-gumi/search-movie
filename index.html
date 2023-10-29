@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App</title>
+    <link rel="stylesheet" href="./css/style.css"> 
+</head>
+
+<body>
+    <!-- Main content for page -->
+    <main class="container">
+        <h1>My movie App</h1>
+        <!-- Section list / search -->
+        <section>
+            <h2>Movie List</h2>
+            <div class="controls">
+                <!-- Search / sort form -->
+                <form id="form-list-control">
+                    <div class="mb-3">
+                        <input type="text" placeholder="movie name..." name="search-string">
+                    </div>
+                    <div class="mb-3">
+                        <button type="button" name="btn-search">Search</button>
+                        <button type="button" name="btn-a2z">A-Z</button>
+                        <button type="button" name="btn-z2a">Z-A</button>
+                    </div>
+                </form>
+                <!-- End of Form -->
+            </div>
+            <!-- Movie List -->
+            <div class="list" id="list">
+                <div class="row">
+                    1. The Shawshank Redemption(1994)
+                </div>
+                <div class="row">
+                    2. The Godfather(1972)
+                </div>
+                <div class="row">
+                    3. The Godfather2(1974)
+                </div>
+                <div class="row">
+                    4. The Dark knight(2008)
+                </div>
+                <div class="row">
+                    5. 12 Angry Men(1957)
+                </div>
+                <div class="row">
+                    6.The Schindler's list(1993)
+                </div>
+                <div class="row">
+                    7.The Load of the Rings: The Return of the king(2003)
+                </div>
+                <div class="row">
+                    8. pulp Fiction(1994)
+                </div>
+            </div>
+        </section>
+        <!-- End list / Search section -->
+
+        <!-- Add movie form -->
+        <section id="Add">
+            <h2>Add a Movie</h2>
+            <form id="form-add">
+                <div class="mb-3">
+                    <lable for="addTitle">Title: </lable>
+                    <input type="text" placeholder="title.." name="title" id="addTitle">
+                </div>
+                <div class="mb-3">
+                    <lable for="addYear">Year: </lable>
+                    <input type="text" placeholder="Year.." name="year" id="addYear">
+                </div>
+                <button type="button" name="submit">Add Movie</button>
+            </form>
+        </section>
+        <!-- End of add movie -->
+        <!-- Update movie form -->
+        <section id="Update">
+            <h2>Add a Movie</h2>
+            <form id="form-update">
+                <div class="mb-3">
+                    <lable for="upIndex">Index: </lable>
+                    <input type="text" placeholder="index..." name="index" id="upIndex">
+                </div>
+                <div class="mb-3">
+                    <lable for="upTitle">Title: </lable>
+                    <input type="text" placeholder="title..." name="title" id="upTitle">
+                </div>
+                <div class="mb-3">
+                    <lable for="upYear">Year: </lable>
+                    <input type="text" placeholder="Year.." name="year" id="upYear">
+                </div>
+                <button type="button" name="submit">Update Movie</button>
+            </form>
+        </section>
+        <!-- End of Update movie -->
+        <!-- Delete movie form -->
+        <section id="Delete">
+            <h2>Delete a Movie</h2>
+            <form id="form-delete">
+                <div class="mb-3">
+                    <lable for="delIndex">Index: </lable>
+                    <input type="text" placeholder="index..." name="index" id="delIndex">
+                </div>
+
+
+                <button type="button" name="submit">Add Movie</button>
+            </form>
+        </section>
+        <!-- End of Delete movie -->
+    </main>
+</body>
+
+</html>
