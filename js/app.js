@@ -6,3 +6,9 @@ let initMovies =[
 ]
 
 let movieList = new MovieList('list', initMovies);
+
+function searchClick(){
+    let formelements = document.getElementById("form-list-control").elements;
+    let text = formelements["search-string"].value;
+    movieList.search(text);
+}

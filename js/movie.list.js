@@ -5,25 +5,54 @@ class MovieList {
         this.refresh();
     }
 
+    
+
     // generate one row
     movieItemString(number, title, year) {
         return `<div class="row">${number}. ${title} (${year})</div>`
     }
-    // Look at using create element
-
+    
     // Generate all rows
-    movieItemString(movies) {
+    movieItemsString(movies) {
         let html = ``;
         for (let i = 0; i < movies.length; i++) {
             let movie = movies[i];
             html = html + this.movieItemString(i + 1, movie.title, movie.year)
         }
-
+    
         return html
     }
+    // Look at using create element
+
+
+    
+    // Generate all rows
+    movieItemsString(movies) {
+        let html = ``;
+        for (let i = 0; i < movies.length; i++) {
+            let movie = movies[i];
+            html = html + this.movieItemString(i + 1, movie.title, movie.year)
+        }
+    
+        return html
+    }
+    
+
+    // movieItemString(number, title, year) {
+    //     return `<div class="row">${number}. ${title} (${year})</div>`
+    // }
+    
+    // movieItemsString(movies) {
+    //     let html = ``;
+    //     for (let i = 0; i < movies.length; i++) {
+    //         let movie = movies[i];
+    //         html = html + this.movieItemString(i + 1, movie.title, movie.year)
+    //     }
+    //     return html
+    // }
 
     refresh() {
-        let elementString = this.movieItemString(this.MovieList);
+        let elementString = this.movieItemsString(this.MovieList);
         let rootElement = document.getElementById(this.rootId);
         rootElement.innerHTML = elementString;
     }
@@ -56,7 +85,7 @@ class MovieList {
         this.refresh();
     }
     // Sort by Title Z - A
-    sortAZZ() {
+    sortZAA() {
         this.MovieList.sort(function (a, b) {
             return b.title.localeCompare(a.title);
         })
@@ -64,11 +93,19 @@ class MovieList {
     }
     // Search by partial title
     search(nameString) {
+        // Create a nre list
         let shortList = [];
+        // Get one movie from our movieList
         for (let movie of this.MovieList) {
+            // check if the nameString is inside of our movie title
             if (movie.title.includes(nameString)) {
-                shortList.push(movie)
+                // if yes, add to new list
+                shortList.push(movie);
             }
         }
+        // refresh the list with the short list
+        let elementString = this.movieItemString(shortList);
+        let rootElement = document.getElementById(this.rootId);
+        rootElement.innerHTML = elementString;
     }
 }
