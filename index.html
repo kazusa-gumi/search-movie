@@ -23,8 +23,8 @@
                     </div>
                     <div class="mb-3">
                         <button type="button" name="btn-search" onclick="searchClick()">Search</button>
-                        <button type="button" name="btn-a2z">A-Z</button>
-                        <button type="button" name="btn-z2a">Z-A</button>
+                        <button type="button" name="btn-a2z" onclick="a2zClick()">A-Z</button>
+                        <button type="button" name="btn-z2a" onclick="z2aClick()">Z-A</button>
                     </div>
                 </form>
                 <!-- End of Form -->
@@ -58,9 +58,16 @@
             </div>
         </section>
         <!-- End list / Search section -->
+        <section class="tab">
+            <button class="tablinks active" onclick="openForm(event, 'Add')">
+                Add New Movie
+            </button>
+            <button class="tablinks" onclick="openForm(event, 'Update')">update a Movie</button>
+            <button class="tablinks" onclick="openForm(event, 'Delete')">delete a Movie</button>
+        </section>
 
         <!-- Add movie form -->
-        <section id="Add">
+        <section id="Add" class="tabContent">
             <h2>Add a Movie</h2>
             <form id="form-add">
                 <div class="mb-3">
@@ -71,12 +78,13 @@
                     <lable for="addYear">Year: </lable>
                     <input type="text" placeholder="Year.." name="year" id="addYear">
                 </div>
-                <button type="button" name="submit">Add Movie</button>
+                <button type="button" name="submit" onclick="addClick()">Add Movie</button>
             </form>
         </section>
         <!-- End of add movie -->
+
         <!-- Update movie form -->
-        <section id="Update">
+        <section id="Update" class="tabContent">
             <h2>Add a Movie</h2>
             <form id="form-update">
                 <div class="mb-3">
@@ -91,12 +99,12 @@
                     <lable for="upYear">Year: </lable>
                     <input type="text" placeholder="Year.." name="year" id="upYear">
                 </div>
-                <button type="button" name="submit">Update Movie</button>
+                <button type="button" name="submit" onclick="updateClick()">Update Movie</button>
             </form>
         </section>
         <!-- End of Update movie -->
         <!-- Delete movie form -->
-        <section id="Delete">
+        <section id="Delete" class="tabContent">
             <h2>Delete a Movie</h2>
             <form id="form-delete">
                 <div class="mb-3">
@@ -105,7 +113,7 @@
                 </div>
 
 
-                <button type="button" name="submit">Add Movie</button>
+                <button type="button" name="submit" onclick="deleteClick()">Add Movie</button>
             </form>
         </section>
         <!-- End of Delete movie -->
